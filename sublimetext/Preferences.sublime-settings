@@ -1,5 +1,6 @@
 {
 	"color_scheme": "Packages/Dayle Rees Color Schemes/legacy/Slime.tmTheme",
+	"ensure_newline_at_eof_on_save": true,
 	"font_size": 11,
 	"ignored_packages":
 	[
