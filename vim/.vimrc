@@ -36,3 +36,4 @@ set laststatus=2
 set number
 syntax enable
 colorscheme xoria256
+set incsearch
