@@ -38,3 +38,4 @@ set number
 syntax enable
 colorscheme xoria256
 set incsearch
+set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " enable soft tabs
