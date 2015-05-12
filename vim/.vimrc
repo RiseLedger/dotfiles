@@ -39,3 +39,14 @@ syntax enable
 colorscheme xoria256
 set incsearch
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab " enable soft tabs
+set autoindent copyindent
+autocmd BufWritePre *.php,*.css,*.js,*.html :call <SID>StripTrailingWhitespaces()
+
+
+" Helper Functions
+function! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
