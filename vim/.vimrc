@@ -11,6 +11,8 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'mattn/emmet-vim'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'Shougo/unite.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -30,6 +32,16 @@ filetype plugin indent on    " required
 " airline plugin config
 let g:airline#extensions#tabline#enabled = 1 " enable the list of buffers
 let g:airline#extensions#tabline#fnamemod = ':t' " show just the filename
+
+" unite plugin config (for searching files)
+let g:unite_source_history_yank_enable = 1
+try
+    let g:unite_source_rec_async_command='ag --nocolor --nogroup -g ""'
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+catch
+endtry
+" search a file in the filetree
+nnoremap <space><space> :split<cr> :<C-u>Unite -start-insert file_rec/async<cr>
 
 " Vim Config
 set t_Co=256
